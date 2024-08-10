@@ -1,3 +1,8 @@
+/**
+ * Función para agregar un libro a la colección biblioteca
+ * @param {set} library 
+ * @param {object} book 
+ */
 function addBook(library, book) {
     if (library.has(book)) {
         console.log(`El libro "${book.title}" ya está en la biblioteca.`);
@@ -7,6 +12,10 @@ function addBook(library, book) {
     }
 }
 
+/**
+ * Función para devolver lista de libros de la colección biblioteca
+ * @param {set} library 
+ */
 function listBooks(library) {
     console.log("\nColección de libros");
     console.log("*".repeat(45));
@@ -17,6 +26,12 @@ function listBooks(library) {
     console.log("*".repeat(45));
 }
 
+/**
+ * Función para buscar un libro en la colección biblioteca por su ISBN
+ * @param {set} library 
+ * @param {string} isbn 
+ * @returns 
+ */
 function findBookByISBN(library, isbn) {
     for (let book of library) {
         if (book.isbn === isbn) {
@@ -26,6 +41,9 @@ function findBookByISBN(library, isbn) {
     return null;
 }
 
+/**
+ * Función Principal
+ */
 function main() {
     let library = new Set();
     addBook(library, { isbn: "978-0135957059", title: "The Pragmatic Programmer: Your Journey to Mastery" });
