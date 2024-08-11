@@ -6,13 +6,12 @@
  */
 function union(list1, list2) {
     // Convertimos ambas listas a Set
-    let set1 = new Set(list1.map(blog => JSON.stringify(blog)));
-    let set2 = new Set(list2.map(blog => JSON.stringify(blog)));
+    const set1 = new Set(list1.map(blog => JSON.stringify(blog)));
+    const set2 = new Set(list2.map(blog => JSON.stringify(blog)));
 
     // Unimos ambos sets
-    let union = new Set([...set1, ...set2]);
+    const union = new Set([...set1, ...set2]);
 
-    // Convertimos los elementos de vuelta a objetos
     return new Set([...union].map(blog => JSON.parse(blog)));
 }
 
@@ -21,7 +20,7 @@ function union(list1, list2) {
  */
 function main() {
 
-    let yesterdayBlogs = [
+    const yesterdayBlogs = [
         { url: "https://www.joelonsoftware.com/", author: "Joel Spolsky" },
         { url: "https://blog.codinghorror.com/", author: "Jeff Atwood" },
         { url: "https://thedailywtf.com/", author: "Alex Papadimoulis" },
@@ -29,7 +28,7 @@ function main() {
         { url: "https://overreacted.io/", author: "Dan Abramov" }
     ];
 
-    let todayBlogs = [
+    const todayBlogs = [
         { url: "https://waitbutwhy.com/", author: "Tim Urban" },
         { url: "https://thedailywtf.com/", author: "Alex Papadimoulis" }, // Duplicado
         { url: "https://solocodigoweb.com/", author: "Gonzalo Chacaltana" },
@@ -37,7 +36,7 @@ function main() {
     ];
 
     // Realizamos la unión de las dos listas de blogs
-    let combinedBlogs = union(yesterdayBlogs, todayBlogs);
+    const combinedBlogs = union(yesterdayBlogs, todayBlogs);
 
     // Mostramos los blogs combinados
     console.log("Blogs combinados sin duplicados:");
