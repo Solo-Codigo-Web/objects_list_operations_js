@@ -18,7 +18,7 @@ function symetricDifferene(blogs1, blogs2) {
  */
 function main() {
 
-    const yesterdayBlogs = new Set([
+    const blogList1 = new Set([
         { url: "https://www.joelonsoftware.com/", author: "Joel Spolsky" },
         { url: "https://blog.codinghorror.com/", author: "Jeff Atwood" },
         { url: "https://thedailywtf.com/", author: "Alex Papadimoulis" },
@@ -26,15 +26,15 @@ function main() {
         { url: "https://overreacted.io/", author: "Dan Abramov" }
     ]);
 
-    const todayBlogs = new Set([
+    const blogList2 = new Set([
         { url: "https://waitbutwhy.com/", author: "Tim Urban" },
         { url: "https://thedailywtf.com/", author: "Alex Papadimoulis" }, // Duplicado
         { url: "https://solocodigoweb.com/", author: "Gonzalo Chacaltana" },
         { url: "https://overreacted.io/", author: "Dan Abramov" } // Duplicado
     ]);
 
-    // Realizamos la diferencia simétrica de las listas de objetos
-    const uniqueBlogs = symetricDifferene(yesterdayBlogs, todayBlogs);
+    // Obtenemos la diferencia simétrica de ambas listas de objetos
+    const uniqueBlogs = symetricDifferene(blogList1, blogList2);
 
     // Mostramos los blogs únicos
     console.log("Blogs únicos (diferencia simétrica) en ambas listas:");

@@ -20,7 +20,7 @@ function union(list1, list2) {
  */
 function main() {
 
-    const yesterdayBlogs = [
+    const blogList1 = [
         { url: "https://www.joelonsoftware.com/", author: "Joel Spolsky" },
         { url: "https://blog.codinghorror.com/", author: "Jeff Atwood" },
         { url: "https://thedailywtf.com/", author: "Alex Papadimoulis" },
@@ -28,7 +28,7 @@ function main() {
         { url: "https://overreacted.io/", author: "Dan Abramov" }
     ];
 
-    const todayBlogs = [
+    const blogList2 = [
         { url: "https://waitbutwhy.com/", author: "Tim Urban" },
         { url: "https://thedailywtf.com/", author: "Alex Papadimoulis" }, // Duplicado
         { url: "https://solocodigoweb.com/", author: "Gonzalo Chacaltana" },
@@ -36,7 +36,7 @@ function main() {
     ];
 
     // Realizamos la unión de las dos listas de blogs
-    const combinedBlogs = union(yesterdayBlogs, todayBlogs);
+    const combinedBlogs = union(blogList1, blogList2);
 
     // Mostramos los blogs combinados
     console.log("Blogs combinados sin duplicados:");

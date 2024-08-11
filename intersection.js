@@ -15,7 +15,7 @@ function intersect(set1, set2) {
  */
 function main() {
 
-    const yesterdayBlogs = new Set([
+    const blogList1 = new Set([
         { url: "https://www.joelonsoftware.com/", author: "Joel Spolsky" },
         { url: "https://blog.codinghorror.com/", author: "Jeff Atwood" },
         { url: "https://thedailywtf.com/", author: "Alex Papadimoulis" },
@@ -23,7 +23,7 @@ function main() {
         { url: "https://overreacted.io/", author: "Dan Abramov" }
     ]);
 
-    const todayBlogs = new Set([
+    const blogList2 = new Set([
         { url: "https://waitbutwhy.com/", author: "Tim Urban" },
         { url: "https://thedailywtf.com/", author: "Alex Papadimoulis" }, // Duplicado
         { url: "https://solocodigoweb.com/", author: "Gonzalo Chacaltana" },
@@ -31,7 +31,7 @@ function main() {
     ]);
 
     // Realizamos la intersección de los dos listas de objetos
-    const commonBlogs = intersect(yesterdayBlogs, todayBlogs);
+    const commonBlogs = intersect(blogList1, blogList2);
 
     // Mostramos los blogs comunes
     console.log("Blogs comunes en ambas listas:");
