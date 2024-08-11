@@ -5,10 +5,12 @@
  */
 function addBook(library, book) {
     if (library.has(book)) {
-        console.log(`El libro "${book.title}" ya está en la biblioteca.`);
+        console.log(`Failed: El libro con ISBN "${book.isbn}" y título: "${book.title}" ya existe en la biblioteca.`);
+    } else if (findBookByISBN(library,book.isbn)) {
+        console.log(`Failed: El libro con ISBN "${book.isbn}" ya existe en la biblioteca.`);
     } else {
         library.add(book);
-        console.log(`El libro "${book.title}" ha sido agregado a la biblioteca.`);
+        console.log(`Success: El libro "${book.title}" ha sido agregado a la biblioteca.`);
     }
 }
 
@@ -46,19 +48,21 @@ function findBookByISBN(library, isbn) {
  */
 function main() {
     let library = new Set();
+    isbn = "978-0201485677"
+    book2 = { isbn: isbn, title: "Refactoring: Improving the Design of Existing Code" };
     addBook(library, { isbn: "978-0135957059", title: "The Pragmatic Programmer: Your Journey to Mastery" });
-    addBook(library, { isbn: "978-0201485677", title: "Refactoring: Improving the Design of Existing Code" });
+    addBook(library, book2);
     addBook(library, { isbn: "978-0735619678", title: "Code Complete: A Practical Handbook of Software Construction" });
-    addBook(library, { isbn: "978-0201485677", title: "Refactoring: Improving the Design of Existing Code" });
+    addBook(library, book2);
+    addBook(library, { isbn: isbn, title: "Advance Programming in C++" });
     listBooks(library);
 
     // Buscar un libro por ISBN
-    isbn = "978-0201485677"
     let foundBook = findBookByISBN(library, isbn);
     if (foundBook) {
-        console.log(`Libro encontrado: ${foundBook.title}`);
+        console.log(`\nLibro con ISBN "${isbn}" encontrado: "${foundBook.title}"`);
     } else {
-        console.log(`Libro no encontrado con ISBN ${isbn}`);
+        console.log(`\nLibro no encontrado con ISBN ${isbn}`);
     }
 }
 
