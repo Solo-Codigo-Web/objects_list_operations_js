@@ -1,5 +1,5 @@
 /**
- * Función que realiza la unión de dos listas
+ * Función que devuelve la intersección de dos listas de objetos
  * @param {*} list1 
  * @param {*} list2 
  * @returns 
@@ -30,7 +30,7 @@ function main() {
         { url: "https://overreacted.io/", author: "Dan Abramov" } // Duplicado
     ]);
 
-    // Realizamos la intersección de los dos conjuntos de datos
+    // Realizamos la intersección de los dos listas de objetos
     const commonBlogs = intersect(yesterdayBlogs, todayBlogs);
 
     // Mostramos los blogs comunes
