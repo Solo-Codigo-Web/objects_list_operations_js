@@ -1,5 +1,5 @@
 /**
- * Función que realiza la unión de dos listas
+ * Función que devuelve la unión de dos listas de objetos
  * @param {*} list1 
  * @param {*} list2 
  * @returns 
